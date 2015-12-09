@@ -7,8 +7,8 @@ nobind
 persist-key
 persist-tun
 ca <%= @ca %>
-cert <%= @cert %>.crt
-key <%= @cert %>.key
+cert <%= @cert %>
+key <%= @key %>
 <% if @tls_auth_key -%>
 tls-auth <%= @tls_auth_key %> 1
 <% end -%>
