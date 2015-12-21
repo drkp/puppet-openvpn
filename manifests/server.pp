@@ -24,6 +24,7 @@ class openvpn::server (
   $status_log               = 'openvpn-status.log',
   $plugins                  = '',
   $verb                     = '3',
+  $pool                     = '10.8.0.1 10.8.0.254 255.255.255.0',
   $port                     = '1194',
   $proto                    = 'udp',
   $redirect_gateway         = '',
@@ -48,6 +49,9 @@ class openvpn::server (
   include openvpn
 
   $openssl = $openvpn::params::openssl
+
+  $server_net = split($server, " ")[0]
+  $server_netmask = split($server, " ")[1]
 
   if ( $log_append != '' ) and ( $log != '' ){
     err('Log_append and log should not both be defined')
