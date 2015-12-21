@@ -31,6 +31,7 @@ class openvpn::server (
   $route                    = [],
   $route_ipv6               = [],
   $server                   = '10.8.0.0 255.255.255.0',
+  $server_ip                = '10.8.0.1',
   $server_ipv6              = undef,
   $username_as_common_name  = '',
   $script_security          = '',
