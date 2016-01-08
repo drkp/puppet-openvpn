@@ -9,6 +9,7 @@ class openvpn::params {
       $openvpn_dir    = '/usr/local/etc/openvpn'
       $package_name   = 'security/openvpn'
       $manage_service = true
+      $autostart_all  = true
       $openvpn_user   = undef
       $openvpn_group  = undef
       $openssl        = '/usr/bin/openssl'
@@ -17,6 +18,7 @@ class openvpn::params {
       $openvpn_dir    = '/etc/openvpn'
       $package_name   = 'openvpn'
       $manage_service = false
+      $autostart_all  = false
       $openvpn_user   = '_openvpn'
       $openvpn_group  = '_openvpn'
       if ( versioncmp($::kernelversion, '5.7') < 0 ) {
@@ -29,6 +31,7 @@ class openvpn::params {
       $openvpn_dir    = '/etc/openvpn'
       $package_name   = 'openvpn'
       $manage_service = true
+      $autostart_all  = true
       $openvpn_user   = 'nobody'
       $openvpn_group  = 'nobody'
       $openssl        = '/usr/bin/openssl'
