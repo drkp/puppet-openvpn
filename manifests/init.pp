@@ -30,8 +30,8 @@ class openvpn(
 
     if $::osfamily == 'Debian' {
       concat { '/etc/default/openvpn':
-        owner => root,
-        group => 0,
+        owner => 'root',
+        group => 'root',
         mode  => '0644',
         warn  => true,
       }
